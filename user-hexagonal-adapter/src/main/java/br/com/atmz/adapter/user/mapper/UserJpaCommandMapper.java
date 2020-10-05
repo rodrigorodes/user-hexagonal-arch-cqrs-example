@@ -10,9 +10,10 @@ public class UserJpaCommandMapper {
 
 	public static Optional<User> convertToModel(UserJpa userJpa) {
 		return Optional.ofNullable(
-				User.ofWithoutPassword(
+				User.of(
 						userJpa.getName(), 
 						userJpa.getMail(), 
+						userJpa.getPassword(),
 						RoleEnum.getRoleByName(userJpa.getRoleName())));
 	}
 

@@ -1,9 +1,9 @@
 package br.com.atmz.user.read.application.queries.userbyid;
 
 import br.com.atmz.commons.cqrs.query.Query;
-import br.com.atmz.user.read.domain.UserQueryRepresentation;
+import br.com.atmz.user.read.domain.UserRepresentation;
 
-public class UserByIdQuery implements Query<UserQueryRepresentation> {
+public class UserByIdQuery implements Query<UserRepresentation> {
 
 	private Long id;
 

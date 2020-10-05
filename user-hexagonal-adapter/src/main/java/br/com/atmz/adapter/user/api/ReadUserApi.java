@@ -11,8 +11,8 @@ import br.com.atmz.commons.cqrs.Bus;
 import br.com.atmz.commons.cqrs.annotations.WebAdapter;
 import br.com.atmz.user.read.application.queries.userall.UserAllQuery;
 import br.com.atmz.user.read.application.queries.userbyid.UserByIdQuery;
-import br.com.atmz.user.read.domain.UserAllQueryRepresentation;
-import br.com.atmz.user.read.domain.UserQueryRepresentation;
+import br.com.atmz.user.read.domain.UserAllRepresentation;
+import br.com.atmz.user.read.domain.UserRepresentation;
 
 @WebAdapter
 @RequestMapping("v1/users")
@@ -27,7 +27,7 @@ public class ReadUserApi {
 	}
 	
 	@GetMapping(value = "findAll")		
-	public ResponseEntity<UserAllQueryRepresentation> findAll() {
+	public ResponseEntity<UserAllRepresentation> findAll() {
 		
 		LOGGER.info(" Init findAll ");
 		
@@ -35,7 +35,7 @@ public class ReadUserApi {
 	}
 	
 	@GetMapping(value = "/{id}")
-	public ResponseEntity<UserQueryRepresentation> findById(
+	public ResponseEntity<UserRepresentation> findById(
 			@PathVariable("id") String id) {
 		
 		LOGGER.info(" Init FindById ");

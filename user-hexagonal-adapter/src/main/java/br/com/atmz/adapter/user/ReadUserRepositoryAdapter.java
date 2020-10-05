@@ -9,8 +9,8 @@ import br.com.atmz.adapter.user.mapper.UserJpaQueryMapper;
 import br.com.atmz.adapter.user.repository.UserRepository;
 import br.com.atmz.commons.cqrs.annotations.RepositoryAdapter;
 import br.com.atmz.user.read.domain.ReadUserRepository;
-import br.com.atmz.user.read.domain.UserAllQueryRepresentation;
-import br.com.atmz.user.read.domain.UserQueryRepresentation;
+import br.com.atmz.user.read.domain.UserAllRepresentation;
+import br.com.atmz.user.read.domain.UserRepresentation;
 
 @RepositoryAdapter
 public class ReadUserRepositoryAdapter implements ReadUserRepository {
@@ -22,7 +22,7 @@ public class ReadUserRepositoryAdapter implements ReadUserRepository {
 	}
 	
 	@Override
-	public UserQueryRepresentation findUserById(Long id) {
+	public UserRepresentation findUserById(Long id) {
 		
 		Optional<UserJpa> user = userRepository.findById(id);
 
@@ -32,7 +32,7 @@ public class ReadUserRepositoryAdapter implements ReadUserRepository {
 	}
 
 	@Override
-	public UserAllQueryRepresentation findAll() {
+	public UserAllRepresentation findAll() {
 		return UserJpaQueryMapper.convertToQueryAll(userRepository.findAll());
 	}
 }

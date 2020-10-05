@@ -4,10 +4,10 @@ import javax.inject.Named;
 
 import br.com.atmz.commons.cqrs.query.QueryHandler;
 import br.com.atmz.user.read.domain.ReadUserRepository;
-import br.com.atmz.user.read.domain.UserAllQueryRepresentation;
+import br.com.atmz.user.read.domain.UserAllRepresentation;
 
 @Named
-public class UserAllQueryHandler implements QueryHandler<UserAllQueryRepresentation, UserAllQuery>{
+public class UserAllQueryHandler implements QueryHandler<UserAllRepresentation, UserAllQuery>{
 	
 	private ReadUserRepository repository;
 
@@ -16,7 +16,7 @@ public class UserAllQueryHandler implements QueryHandler<UserAllQueryRepresentat
 	}
 
 	@Override
-	public UserAllQueryRepresentation handle(UserAllQuery query) {
+	public UserAllRepresentation handle(UserAllQuery query) {
 		return repository.findAll();
 	}
 

@@ -4,10 +4,10 @@ import javax.inject.Named;
 
 import br.com.atmz.commons.cqrs.query.QueryHandler;
 import br.com.atmz.user.read.domain.ReadUserRepository;
-import br.com.atmz.user.read.domain.UserQueryRepresentation;
+import br.com.atmz.user.read.domain.UserRepresentation;
 
 @Named
-public class UserByIdQueryHandler implements QueryHandler<UserQueryRepresentation, UserByIdQuery>{
+public class UserByIdQueryHandler implements QueryHandler<UserRepresentation, UserByIdQuery>{
 	
 	private ReadUserRepository repository;
 
@@ -16,7 +16,7 @@ public class UserByIdQueryHandler implements QueryHandler<UserQueryRepresentatio
 	}
 
 	@Override
-	public UserQueryRepresentation handle(UserByIdQuery query) {
+	public UserRepresentation handle(UserByIdQuery query) {
 		return repository.findUserById(query.getId());
 	}
 

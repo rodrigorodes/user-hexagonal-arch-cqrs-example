@@ -8,7 +8,7 @@ import br.com.atmz.commons.mail.MailMessage;
 import br.com.atmz.commons.mail.MailService;
 import br.com.atmz.commons.mail.MailType;
 import br.com.atmz.user.write.application.commands.update.UpdateUserRepresentation;
-import br.com.atmz.user.write.application.events.UpdateUserEvent;
+import br.com.atmz.user.write.application.events.UserUpdatedEvent;
 
 @Component
 public class MailUpdateUserEventListener {
@@ -17,7 +17,7 @@ public class MailUpdateUserEventListener {
 	private MailService sender;
 
     @EventListener
-	public void onApplicationEvent(UpdateUserEvent event) {
+	public void onApplicationEvent(UserUpdatedEvent event) {
     	UpdateUserRepresentation createUserRepresentation = event.getWhat();
 		MailMessage mailMessageCreate = MailMessage.of(createUserRepresentation.getUser().getMail(), MailType.USER_REGISTRED);
 		mailMessageCreate.addMailParam("title", MailType.USER_REGISTRED.getSubject());

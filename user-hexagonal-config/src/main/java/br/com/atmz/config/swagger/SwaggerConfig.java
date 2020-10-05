@@ -28,7 +28,7 @@ public class SwaggerConfig {
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("br.com.atmz"))
+                .apis(RequestHandlerSelectors.basePackage("br.com.atmz.adapter"))
                 .paths(PathSelectors.ant("/**"))
                 .build()
                 .apiInfo(apiEndPointsInfo())

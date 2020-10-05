@@ -19,7 +19,8 @@ public class WriteUserRepositoryAdapter implements WriteUserRepository {
 
 	@Override
 	public User create(User user) {
-		return UserJpaCommandMapper.convertToModel(userRepository.save(UserJpaCommandMapper.convertToEntity(user))).get();
+		return UserJpaCommandMapper.convertToModel(
+				userRepository.save(UserJpaCommandMapper.convertToEntity(user))).get();
 	}
 
 	@Override

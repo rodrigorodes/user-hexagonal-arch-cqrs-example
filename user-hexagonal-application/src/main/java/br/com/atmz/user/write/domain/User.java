@@ -14,15 +14,11 @@ public class User {
 	private String password;
 	private List<Role> roles = new ArrayList<>();
 
-	private User(String name, String mail, RoleEnum role) {
+	private User(String name, String mail, String password, RoleEnum role) {
 		this.name = name;
 		this.mail = mail;
-		this.addRole(role.name());
-	}
-	
-	private User(String name, String mail, String password, RoleEnum role) {
-		this(name, mail, role);
 		this.password = password;
+		this.addRole(role.name());		
 	}
 
 	public Long getId() {
@@ -75,8 +71,4 @@ public class User {
 		return new User(name, mail, password, role);
 	}
 	
-	public static User ofWithoutPassword(String name, String mail, RoleEnum role) {
-		return new User(name, mail, role);
-	}
-
 }
