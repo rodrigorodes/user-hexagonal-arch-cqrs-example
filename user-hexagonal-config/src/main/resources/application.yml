@@ -1,0 +1,44 @@
+spring:
+  datasource:
+    driverClassName: org.h2.Driver
+    url: jdbc:h2:mem:bibliotecavirtualdb
+    sql-script-encoding: UTF-8
+    username: sa
+    password: ''
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
+  jpa:
+    database-platform: org.hibernate.dialect.H2Dialect
+    hibernate:      ddl-auto: update
+    show-sql: false
+    open-in-view: false
+    
+  mail:
+    default-encoding: UTF-8
+    host: atmz-qua.westeurope.cloudapp.azure.com
+    username: yourgamil@gmail.com
+    password: youremailpassword
+    port: 1025
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+    protocol: smtp
+    test-connection: false
+                    
+  thymeleaf:
+    cache: false
+    check-template: true
+    check-template-location: true
+    servlet:
+      content-type: text/html
+    enabled: true
+    encoding: UTF-8
+    mode: HTML
+    prefix: classpath:/templates/
+    suffix: .html                 
+   
