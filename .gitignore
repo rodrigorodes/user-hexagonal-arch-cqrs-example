@@ -1,0 +1,12 @@
+**/.classpath
+**/.project
+**/.settings
+**/.tern-project
+**/target
+**/bin
+**/pom.xml.releaseBackup
+**/.sts4-cache
+
+**/**/classpath-data.json
+
+.idea/
