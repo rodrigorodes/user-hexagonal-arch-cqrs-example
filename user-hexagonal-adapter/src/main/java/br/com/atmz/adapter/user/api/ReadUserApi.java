@@ -16,13 +16,13 @@ import br.com.atmz.user.read.domain.UserRepresentation;
 
 @WebAdapter
 @RequestMapping("v1/users")
-public class ReadUserApi {
+public class ReadUserAPI {
 	
-    private static final Logger LOGGER = LoggerFactory.getLogger(ReadUserApi.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(ReadUserAPI.class);
 	
 	private Bus bus;
 	
-	public ReadUserApi(Bus bus) {
+	public ReadUserAPI(Bus bus) {
 		this.bus = bus;
 	}
 	
